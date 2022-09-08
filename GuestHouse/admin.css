@@ -1,0 +1,127 @@
+/* STANDARD ELEMENTS */
+
+body {
+    font-family: Verdana, Helvetica;
+    background-color: #f0f8ff;
+    font-size: 14px;
+    /* Always show a vertical scrollbar */
+    overflow-y: scroll;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+
+header,
+footer {
+    border: 2px solid #456879;
+    box-sizing: border-box;
+    margin: 6px 0;
+    padding: 10px;
+}
+
+/* FORM ELEMENTS */
+
+label,
+a.cancel {
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+}
+input,
+select {
+    border: 1px solid darkslategrey;
+    color: black;
+    display: inline-block;
+}
+input:focus,
+select:focus {
+    outline: 2px solid darkslategrey;
+}
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+select {
+    background-color: white;
+    margin: 6px 0;
+    padding: 10px;
+}
+input[type="submit"] {
+    background-color: lightgreen;
+}
+input[type="submit"][value="delete"] {
+    background-color: pink;
+}
+input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    vertical-align: bottom;
+}
+
+.valid {
+    background-color: #d4f0fb;
+}
+
+.invalid {
+    background-color: #ffdfe4;
+}
+
+/* HIDE/SHOW SECTIONS */
+
+pre {
+    background: white;
+    padding: 5px;
+}
+
+.collapser {
+    margin-top: 20px;
+}
+input.collapser {
+    position: absolute;
+    left: -1000px;
+    width: 0;
+    height: 0;
+}
+input.collapser + label {
+    background: plum;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+input.collapser + label:active {
+    outline: 3px solid magenta;
+}
+input.collapser:focus + label {
+    outline: 3px solid darkmagenta;
+}
+input.collapser:not(:checked) + label + * {
+    display: none;
+}
+
+/* Special case to show/hide script execution reports */
+.report {
+    background: white;
+    padding: 5px;
+}
+.report.file {
+    background: paleturquoise;
+}
+.report.message {
+    background: powderblue;
+}
+input#show_reports:not(:checked) + label ~ .report {
+    display: none;
+}
+input#show_reports:not(:checked) + label ~ .report.always {
+    display: block;
+}
